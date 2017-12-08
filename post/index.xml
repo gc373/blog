@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on from:gc373</title>
-    <link>http://example.org/post/</link>
+    <link>https://gc373.github.io/blog/post/</link>
     <description>Recent content in Posts on from:gc373</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 09 Dec 2017 03:24:41 +0900</lastBuildDate>
     
-	<atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gc373.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>dotstokyoのコンセプトについて</title>
-      <link>http://example.org/post/dotstokyo_concepts/</link>
+      <link>https://gc373.github.io/blog/post/dotstokyo_concepts/</link>
       <pubDate>Sat, 09 Dec 2017 03:24:41 +0900</pubDate>
       
-      <guid>http://example.org/post/dotstokyo_concepts/</guid>
+      <guid>https://gc373.github.io/blog/post/dotstokyo_concepts/</guid>
       <description>はい、みなみです。 なにか書きます。 なにせ #Tokyo_in_Words_and_Letters なので。
 ▲ → 読み飛ばしてよい
 ■ → 読んだ方がよい
@@ -29,10 +29,10 @@
     
     <item>
       <title>Test01</title>
-      <link>http://example.org/post/test01/</link>
+      <link>https://gc373.github.io/blog/post/test01/</link>
       <pubDate>Sat, 09 Dec 2017 03:21:12 +0900</pubDate>
       
-      <guid>http://example.org/post/test01/</guid>
+      <guid>https://gc373.github.io/blog/post/test01/</guid>
       <description></description>
     </item>
     
