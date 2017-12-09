@@ -1,0 +1,41 @@
+baseURL = "https://gc373.github.io/blog/"
+languageCode = "en-us"
+title = "from:gc373"
+publishdir = "public"
+theme = "blackburn"
+canonifyurls = true
+paginate = 10
+
+[params]
+googleAnalytics = "UA-110959652-1"
+
+[social]
+# Link your social networking accounts to the side menu
+# by entering your username or ID.
+
+# SNS microblogging
+twitter = "gc373"
+
+# SNS photo/video sharing
+instagram = "gc373i"
+github = "gc373"
+[menu]
+  # Shown in the side menu.
+  [[menu.main]]
+    name = "Home"
+    pre = "<i class='fa fa-home fa-fw'></i>"
+    weight = 1
+    identifier = "home"
+    url = "/"
+  [[menu.main]]
+    name = "Posts"
+    pre = "<i class='fa fa-list fa-fw'></i>"
+    weight = 2
+    identifier = "post"
+    url = "/post/"
+  [[menu.main]]
+    name = "RSS"
+    pre = "<i class='fa fa-rss fa-fw'></i>"
+    weight = 2
+    identifier = "RSS"
+    url = "/post/index.xml"
