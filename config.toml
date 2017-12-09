@@ -5,7 +5,6 @@ publishdir = "public"
 theme = "blackburn"
 canonifyurls = true
 paginate = 10
-rssuri = "feed.xml"
 
 [params]
 googleAnalytics = "UA-110959652-1"
@@ -20,8 +19,6 @@ twitter = "gc373"
 # SNS photo/video sharing
 instagram = "gc373i"
 github = "gc373"
-
-rssuri = "index.xml"
 [menu]
   # Shown in the side menu.
   [[menu.main]]
@@ -36,3 +33,9 @@ rssuri = "index.xml"
     weight = 2
     identifier = "post"
     url = "/post/"
+  [[menu.main]]
+    name = "RSS"
+    pre = "<i class='fa fa-rss fa-fw'></i>"
+    weight = 2
+    identifier = "RSS"
+    url = "/post/index.xml"

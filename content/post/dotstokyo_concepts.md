@@ -3,6 +3,7 @@ title: "dotstokyoのコンセプトについて"
 date: 2017-12-09T03:24:41+09:00
 draft: false
 toc: true
+eyecatch: "images/kilroy.jpg"
 ---
 
 はい、みなみです。  
