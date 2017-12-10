@@ -7,7 +7,7 @@ paginate = 10
 
 [params]
 Title = "from:gc373"
-description = "gc373's blog"
+description = "gc373's blog"
 googleAnalytics = "UA-110959652-1"
 languageCode = "ja"
 countryCode = "ja"
