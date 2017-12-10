@@ -1,7 +1,8 @@
-./public/*
-./themes/blackburn/*
-./static/*
-./content/*
+.public/*
+.themes/blackburn/*
+.static/*
+.content/*
+
 ### https://raw.github.com/github/gitignore/48e6581139426a4dfc66f868350188144bb7098f/Global/macos.gitignore
 
 *.DS_Store

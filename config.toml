@@ -4,6 +4,7 @@ publishdir = "public"
 theme = "blackburn"
 canonifyurls = true
 paginate = 10
+enableGitInfo = true
 
 [params]
 Title = "from:gc373"
