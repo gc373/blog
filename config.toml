@@ -44,3 +44,10 @@ github = "gc373"
     weight = 2
     identifier = "RSS"
     url = "/post/index.xml"
+  [[menu.main]]
+    name = "about"
+    pre = "<i class='fa fa-user-circle-o fa-fw'></i>"
+    weight = 2
+    identifier = "about"
+    url = "/post/about/"
+    
