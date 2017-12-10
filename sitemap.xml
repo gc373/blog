@@ -13,7 +13,14 @@
   </url>
   
   <url>
-    <loc>https://gc373.github.io/blog/categories/</loc>
+    <loc>https://gc373.github.io/blog/tags/dotstokyo/</loc>
+    <lastmod>2017-12-10T13:15:45+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gc373.github.io/blog/tags/idol/</loc>
+    <lastmod>2017-12-10T13:15:45+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -25,6 +32,7 @@
   
   <url>
     <loc>https://gc373.github.io/blog/tags/</loc>
+    <lastmod>2017-12-10T13:15:45+09:00</lastmod>
     <priority>0</priority>
   </url>
   
