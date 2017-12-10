@@ -5,7 +5,8 @@ theme = "blackburn"
 canonifyurls = true
 paginate = 10
 enableGitInfo = true
-
+[taxonomies]
+tag = "tags"
 [params]
 Title = "from:gc373"
 description = "gc373's blog"
