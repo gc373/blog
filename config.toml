@@ -12,7 +12,8 @@ Title = "from:gc373"
 description = "gc373's blog"
 googleAnalytics = "UA-110959652-1"
 languageCode = "ja"
-countryCode = "ja"
+
+hasCJKLanguage = true
 
 [social]
 # Link your social networking accounts to the side menu
@@ -24,6 +25,7 @@ twitter = "gc373"
 # SNS photo/video sharing
 instagram = "gc373i"
 github = "gc373"
+
 [menu]
   # Shown in the side menu.
   [[menu.main]]
