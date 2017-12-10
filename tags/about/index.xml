@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on from:gc373</title>
+    <link>https://gc373.github.io/blog/tags/about/</link>
+    <description>Recent content in About on from:gc373</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 10 Dec 2017 23:34:23 +0900</lastBuildDate>
+    
+	<atom:link href="https://gc373.github.io/blog/tags/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>about</title>
+      <link>https://gc373.github.io/blog/post/about/</link>
+      <pubDate>Sun, 10 Dec 2017 23:34:23 +0900</pubDate>
+      
+      <guid>https://gc373.github.io/blog/post/about/</guid>
+      <description>これなに？ 僕のブログ
+特に書くことは決まってないけど、
+ Twitterで入り切らないこと
+ 技術的なこと
+ まとまらない考え  とかを上げていくかも
+誰？ みなみです。
+あとは個人情報です。
+聞かないでください。
+興味が有ることは タグ一覧 でも見てくれればわかるはず
+このブログの仕組みは？ GitHubに記事を上げる → github-pagesという仕組みで表示される
+普通のブログと違うの？ このブログは1からつくってるので、広告なし、デザイン変更自由、
+Markdownで書けるとかがメリット。無料。
+一方で、デザインを決めないといけないし、
+ファビコンとかTwitter Cardsとか全部自分で設定しないといけない。
+独自ドメインも使えるけど今のとこ考えはいない。
+流れ Markdownで記事を書く
+→ Hugoという静的サイト生成ツールをつかってブログ化
+→ GitHubにアップロード</description>
+    </item>
+    
+  </channel>
+</rss>
