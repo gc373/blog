@@ -8,7 +8,7 @@
   <meta name="twitter:title" content="{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}">
   <meta name="twitter:url" content="{{ .Permalink }}">
   <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.eyecatch }}">
-  <meta name="twitter:description" content="{{if .IsPage}}{{ .Summary }}{{else}}{{.Site.Params.Description}}{{end}}">
+  <meta name="twitter:description" content="{{if .IsPage}}{{ .Summary }}{{else}}{{.Site.Params.description}}{{end}}">
   <meta name="og:title" content="{{ .Title }}" />
   <meta name="og:description" content="{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
   <meta name="og:image" content="{{ .Site.BaseURL }}{{ .Params.eyecatch }}" />
