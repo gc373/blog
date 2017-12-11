@@ -1,5 +1,4 @@
 baseURL = "https://gc373.github.io/blog/"
-languageCode = "en-us"
 publishdir = "public"
 theme = "blackburn"
 canonifyurls = true
@@ -12,8 +11,10 @@ Title = "from:gc373"
 description = "gc373's blog"
 googleAnalytics = "UA-110959652-1"
 languageCode = "ja"
+enableRobotsTXT = true
 
 hasCJKLanguage = true
+disqus = "from-gc373"
 
 [social]
 # Link your social networking accounts to the side menu

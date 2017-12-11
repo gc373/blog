@@ -5,6 +5,7 @@ draft: false
 toc: true
 eyecatch: "images/kilroy.jpg"
 tags: ["about"]
+comments : true
 ---
 ちょっとこのブログについての説明。
 <!--more-->
