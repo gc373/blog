@@ -1,11 +1,14 @@
 ---
 title: "about"
-date: 2017-12-10T23:34:23+09:00
+date: 2017-12-09T03:24:14+09:00
 draft: false
 toc: true
 eyecatch: "images/kilroy.jpg"
 tags: ["about"]
 ---
+ちょっとこのブログについての説明。
+<!--more-->
+
 ## これなに？
 僕のブログ  
 特に書くことは決まってないけど、  

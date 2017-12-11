@@ -9,7 +9,9 @@ tags: ["idol", "dotstokyo"]
 
 はい、みなみです。  
 なにか書きます。  
-なにせ #Tokyo_in_Words_and_Letters なので。   
+なにせ #Tokyo_in_Words_and_Letters なので。  
+<!--more-->
+
 ただし、この記事は書きかけです。(更新予定あり)  
 
 ---
@@ -35,7 +37,7 @@ tags: ["idol", "dotstokyo"]
 <!-- TOC -->
 
 - [★ TL;DR](#tldr)
-- [目次](#toc)
+    - [目次](#toc)
 - [▲ What's？](#whats)
 - [▲ Why ?](#why)
 - [▲ Who ?](#who)
