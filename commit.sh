@@ -3,7 +3,7 @@
 git add -A
 
 # Commit changes.
-msg="rebuilding site `date`"
+msg="update `date +"%Y/%m/%d %p %I:%M:%S"`"
 if [ $# -eq 1 ]
   then msg="$1"
 fi
