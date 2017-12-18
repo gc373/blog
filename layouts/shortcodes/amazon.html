@@ -1,0 +1,7 @@
+<div class="amazon-link">
+    <img src="https://images-na.ssl-images-amazon.com/images/P/{{ .Get "asin" }}.09._SCTZZZZZZZ_.jpg" alt="{{ .Get "name" }}">
+    <span>{{ i18n "watchAtAmazon" }}</span>
+    <span>
+      <a href="https://www.amazon.co.jp/exec/obidos/ASIN/{{ .Get "asin" }}/{{ .Page.Site.Params.amazonAsociateId }}/" target="_blank">{{ .Get "name" }}</a>
+    </span>
+  </div>
