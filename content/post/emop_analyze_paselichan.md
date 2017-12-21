@@ -1,7 +1,7 @@
 ---
 title: "エモクルスコップ「Pit Put Circle」解説"
 date: 2017-12-20T20:11:44+09:00
-lastmod: 2017-12-22T0:42:00+09:00
+lastmod: 2017-12-22T00:48:00+09:00
 draft: false
 toc: true
 eyecatch: "images/kilroy.jpg"
@@ -94,7 +94,7 @@ description: ""
 
 # まるさんかくしかく
 ---
-{{< youtube CRhb_5Qw >}}
+{{< youtube btMbguc1b4A >}}
 - 「今僕の」が3拍目からはじまる
 - アルバム/エモップにとって大事な曲
 - 音が多いのは不安の現れ
