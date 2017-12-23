@@ -10,6 +10,7 @@ description: ""
 はい、エモクルスコップについて書きます。解説というか、メモ。  
 12/20に行われた、「**『Pit Put Circle』解剖SHOW**」に行ってきました。  
 <!--more-->
+
 これはエモクルスコップのプロデューサー兼楽曲担当の[梶原パセリちゃん](https://twitter.com/K_PaseliChan)による、  
 エモクルスコップの初リリース、初フルアルバム「Pit Put Circle」の解説イベントです。
 <blockquote class="embedly-card"><h4><a href="https://www.amazon.co.jp/dp/B077TRTBDB/">Pit Put Circle</a></h4><p>Pit Put Circle</p></blockquote>
