@@ -4,6 +4,7 @@
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
 function gitUpdate() {
+  printDir
   # Add changes to git.
   git add -A
 
@@ -19,6 +20,7 @@ function gitUpdate() {
 }
 
 function gitRebuild(){
+  printDir
   # Add changes to git.
   git add -A
 
@@ -28,6 +30,7 @@ function gitRebuild(){
     then msg="$1"
   fi
   git commit -m "$msg"
+  git push origin master
 }
 function printDir(){
   printf "\033[0;31m[${PWD}]\033[0;39m\n"
@@ -36,12 +39,8 @@ function printDir(){
 # Build the project. 
 hugo
 cd public
-printDir
 gitRebuild
 cd ../
-printDir
 gitUpdate 
-# Go To Public folder
-cd public && printDir && git push origin master
 # Come Back
 cd ..
