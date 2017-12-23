@@ -3,7 +3,7 @@ title: "エモクルスコップ「Pit Put Circle」解説"
 date: 2017-12-20T20:11:44+09:00
 draft: false
 toc: true
-eyecatch: "images/pitputcircle.jpg"
+eyecatch: "img/pitputcircle.jpg"
 tags: ["emoquru_scoop", "idol"]
 description: ""
 ---
