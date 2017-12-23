@@ -31,8 +31,12 @@ function gitRebuild(){
 }
 
 # Build the project. 
-hugo && gitUpdate && \
+hugo
+cd public
+gitRebuild
+cd ../
+gitUpdate 
 # Go To Public folder
-cd public && gitRebuild && git push origin master
+cd public && git push origin master
 # Come Back
 cd ..
