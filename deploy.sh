@@ -28,14 +28,11 @@ function gitRebuild(){
     then msg="$1"
   fi
   git commit -m "$msg"
-
-  #Push source and build repos.
-  git push origin master
 }
 
 # Build the project. 
 hugo && gitUpdate
 # Go To Public folder
-cd public && gitRebuild
+cd public && gitRebuild && git push origin master
 # Come Back
 cd ..
