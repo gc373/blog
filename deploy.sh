@@ -30,7 +30,7 @@ function gitRebuild(){
   git commit -m "$msg"
 }
 function printDir(){
-  printf "\033[0;31m${PWD}\033[0;39m"
+  printf "\033[0;31m[${PWD}]\033[0;39m\n"
 }
 
 # Build the project. 
