@@ -31,7 +31,7 @@ function gitRebuild(){
 }
 
 # Build the project. 
-hugo && gitUpdate
+hugo && gitUpdate && \
 # Go To Public folder
 cd public && gitRebuild && git push origin master
 # Come Back
