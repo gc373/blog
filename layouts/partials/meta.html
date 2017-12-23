@@ -1,0 +1,13 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ if .IsNode }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ else }}{{ with .Description }}{{ . }}{{ end }}{{ end }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="{{ .Site.Params.Twitter }}">
+<meta name="twitter:creator" content="{{ .Site.Params.Twitter }}">
+<meta name="twitter:title" content="{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}">
+<meta name="twitter:url" content="{{ .Permalink }}">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.eyecatch }}">
+<meta name="twitter:description" content="{{if .IsPage}}{{ .Summary }}{{else}}{{.Site.Params.description}}{{end}}">
+<meta name="og:title" content="{{ .Title }}" />
+<meta name="og:description" content="{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+<meta name="og:image" content="{{ .Site.BaseURL }}{{ .Params.eyecatch }}" />
