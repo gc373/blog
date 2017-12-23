@@ -29,14 +29,19 @@ function gitRebuild(){
   fi
   git commit -m "$msg"
 }
+function printDir(){
+  printf "\033[0;31m${PWD}\033[0;39m"
+}
 
 # Build the project. 
 hugo
 cd public
+printDir
 gitRebuild
 cd ../
+printDir
 gitUpdate 
 # Go To Public folder
-cd public && git push origin master
+cd public && printDir && git push origin master
 # Come Back
 cd ..
