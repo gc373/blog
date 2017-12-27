@@ -8,6 +8,7 @@ tags: ["Programming","Slack"]
 ---
 はい、Slackの自動招待メールを受け取るslackinの話。  
 <!--more-->
+
 ![](/img/invite_slack.png)
 # 目次
 
