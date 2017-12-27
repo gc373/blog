@@ -14,9 +14,6 @@ function gitUpdate() {
     then msg="$1"
   fi
   git commit -m "$msg"
-
-  #Push source and build repos.
-  git push origin master
 }
 
 function gitRebuild(){
@@ -38,9 +35,8 @@ function printDir(){
 
 # Build the project. 
 hugo
+gitUpdate
 cd public
 gitRebuild
-cd ../
-gitUpdate 
 # Come Back
 cd ..
