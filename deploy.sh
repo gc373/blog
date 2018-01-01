@@ -3,19 +3,6 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
-function gitUpdate() {
-  printDir
-  # Add changes to git.
-  git add -A
-
-  # Commit changes.
-  msg="update `date +"%Y/%m/%d %p %I:%M:%S"`"
-  if [ $# -eq 1 ]
-    then msg="$1"
-  fi
-  git commit -m "$msg"
-}
-
 function gitRebuild(){
   printDir
   # Add changes to git.
@@ -27,15 +14,15 @@ function gitRebuild(){
     then msg="$1"
   fi
   git commit -m "$msg"
-  git push origin master
+  git push git@github.com:gc373/blog.git
 }
 function printDir(){
   printf "\033[0;31m[${PWD}]\033[0;39m\n"
 }
 
 # Build the project. 
+rm -rf public/*
 hugo
-gitUpdate
 cd public
 gitRebuild
 # Come Back
