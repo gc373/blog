@@ -6,6 +6,10 @@ jobs:
       TZ: /usr/share/zoneinfo/Asia/Tokyo
     steps:
         - checkout
+        = run:
+          command: |
+            git config --global user.name "CircleCI"
+            git config --global user.email "circleci@example.com"
 
   deploy:
     machine: true
@@ -19,6 +23,8 @@ jobs:
         - checkout
         - run:
             command: |
+              git config --global user.name "CircleCI"
+              git config --global user.email "circleci@example.com"
               git clone https://github.com/gc373/blog.git public
               sudo cp /usr/share/zoneinfo/Japan /etc/localtime
               ls -la

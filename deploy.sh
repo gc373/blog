@@ -3,6 +3,9 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
+function printDir(){
+  printf "\033[0;31m[${PWD}]\033[0;39m\n"
+}
 function gitRebuild(){
   printDir
   # Add changes to git.
@@ -15,9 +18,6 @@ function gitRebuild(){
   fi
   git commit -m "$msg"
   git push git@github.com:gc373/blog.git origin/master
-}
-function printDir(){
-  printf "\033[0;31m[${PWD}]\033[0;39m\n"
 }
 
 # Build the project. 
