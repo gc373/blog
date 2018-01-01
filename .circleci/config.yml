@@ -5,11 +5,11 @@ jobs:
     working_directory: ~/blog
     environment:
       TZ: /usr/share/zoneinfo/Asia/Tokyo
-    branches: draft
     steps:
         - run:
             name: install hugo
-            command: go get -v github.com/gohugoio/hugo 
+            command: go get -v github.com/gohugoio/hugo
+        - checkout
         - run:
             name: build hugo
             pwd: blog/
@@ -24,7 +24,6 @@ jobs:
     working_directory: ~/blog
     environment:
       TZ: /usr/share/zoneinfo/Asia/Tokyo
-    branches: draft
     steps:
         - run:
             name: install hugo
