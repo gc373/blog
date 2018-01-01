@@ -23,12 +23,13 @@ jobs:
         - checkout
         - run:
             command: |
+              sudo cp /usr/share/zoneinfo/Japan /etc/localtime
               git config --global user.name "CircleCI"
               git config --global user.email "circleci@example.com"
-              git clone https://github.com/gc373/blog.git public
-              sudo cp /usr/share/zoneinfo/Japan /etc/localtime
+              rm -rf public
               git submodule sync
               git submodule update --init --recursive
+              git clone git@github.com:gc373/blog.git public
               chmod +x deploy.sh && ./deploy.sh
 
 workflows:

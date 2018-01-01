@@ -9,19 +9,22 @@ function printDir(){
 function gitRebuild(){
   printDir
   # Add changes to git.
-  git add -A
+  git add .
 
   # Commit changes.
   msg="rebuilding site `date +"%Y/%m/%d %p %I:%M:%S"`"
   if [ $# -eq 1 ]
     then msg="$1"
   fi
+  printf "\033[0;31m[$msg]\033[0;39m\n"
   git commit -m "$msg"
-  git push git@github.com:gc373/blog.git origin/master
+  git push ssh://git@github.com:gc373/blog.git origin/master
 }
 
 # Build the project. 
-rm -rf public/*
+cd public
+git reset origin/master
+cd ../
 hugo
 cd public
 gitRebuild
