@@ -14,7 +14,7 @@ function gitRebuild(){
     then msg="$1"
   fi
   git commit -m "$msg"
-  git push git@github.com:gc373/blog.git
+  git push git@github.com:gc373/blog.git origin/master
 }
 function printDir(){
   printf "\033[0;31m[${PWD}]\033[0;39m\n"
