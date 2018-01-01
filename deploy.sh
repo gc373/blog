@@ -18,7 +18,7 @@ function gitRebuild(){
   fi
   printf "\033[0;31m[$msg]\033[0;39m\n"
   git commit -m "$msg"
-  git push ssh://git@github.com:gc373/blog.git origin/master
+  git push
 }
 
 # Build the project. 
