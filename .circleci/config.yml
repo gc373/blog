@@ -6,7 +6,7 @@ jobs:
       TZ: /usr/share/zoneinfo/Asia/Tokyo
     steps:
         - checkout
-        = run:
+        - run:
           command: |
             git config --global user.name "CircleCI"
             git config --global user.email "circleci@example.com"
