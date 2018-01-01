@@ -12,11 +12,13 @@ function gitRebuild(){
   git add .
 
   # Commit changes.
-  msg="rebuilding site `date +"%Y/%m/%d %p %I:%M:%S"`"
+  now=`date +"%Y/%m/%d %p %I:%M:%S"`
+  msg="rebuilding site ${now}"
+  printf "\033[0;31m[${msg}]\033[0;39m\n"
   if [ $# -eq 1 ]
     then msg="$1"
   fi
-  printf "\033[0;31m[$msg]\033[0;39m\n"
+  printf "\033[0;31m[:tada:${now}:tada:]\033[0;39m\n"
   git commit -m "$msg"
   git push
 }
