@@ -4,7 +4,7 @@ jobs:
     machine: true
     working_directory: ~/blog
     environment:
-    TZ: /usr/share/zoneinfo/Asia/Tokyo
+      TZ: /usr/share/zoneinfo/Asia/Tokyo
     branches: draft
     steps:
         - run:
@@ -23,7 +23,7 @@ jobs:
     machine: true
     working_directory: ~/blog
     environment:
-    TZ: /usr/share/zoneinfo/Asia/Tokyo
+      TZ: /usr/share/zoneinfo/Asia/Tokyo
     branches: draft
     steps:
         - run:
