@@ -46,5 +46,3 @@ Markdownで記事を書く
 → CircleCIにWebhookが届く  
 → Hugoという静的サイト生成ツールをつかってブログ化  
 → Github pagesでブログ化して表示される
-
-test
