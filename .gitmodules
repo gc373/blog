@@ -2,3 +2,6 @@
 	path = theme/blackburn
 	url = https://github.com/yoshiharuyamashita/blackburn
 	ignore = dirty
+[submodule "themes/blackburn"]
+	path = themes/blackburn
+	url = https://github.com/yoshiharuyamashita/blackburn
