@@ -17,7 +17,7 @@ function gitRebuild(){
     then msg="$1"
   fi
   git commit -m "$msg"
-  git push git@github.com:gc373/blog.git origin/master
+  git push origin/master
 }
 
 # Build the project. 
