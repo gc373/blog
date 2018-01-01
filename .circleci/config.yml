@@ -21,7 +21,6 @@ jobs:
             command: |
               git clone https://github.com/gc373/blog.git public
               sudo cp /usr/share/zoneinfo/Japan /etc/localtime
-              rm -rf public/*
               git submodule add -f https://github.com/gc373/blog.git public/
               git submodule sync
               git submodule update --init --recursive

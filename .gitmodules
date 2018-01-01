@@ -2,3 +2,6 @@
 	path = themes/blackburn
 	url = https://github.com/yoshiharuyamashita/blackburn
 	ignore = dirty
+[submodule "public"]
+	path = public
+	url = https://github.com/gc373/blog.git
