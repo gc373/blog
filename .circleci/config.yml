@@ -1,5 +1,24 @@
 version: 2
 jobs:
+  build:
+    machine: true
+    working_directory: ~/blog
+  environment:
+   TZ: /usr/share/zoneinfo/Asia/Tokyo
+  branches: draft
+  steps:
+      - run:
+          name: install hugo
+          command: go get -v github.com/gohugoio/hugo 
+      - run:
+          name: build hugo
+          pwd: blog/
+          command: hugo
+      - run:
+          command: |
+            git clone https://github.com/gc373/blog.git public
+            sudo cp /usr/share/zoneinfo/Japan /etc/localtime
+
   deploy:
     machine: true
     working_directory: ~/blog
