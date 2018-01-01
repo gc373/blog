@@ -27,8 +27,11 @@ jobs:
               git config --global user.email "circleci@example.com"
               git clone https://github.com/gc373/blog.git public
               sudo cp /usr/share/zoneinfo/Japan /etc/localtime
-              ls -la
+              git submodule add -f https://github.com/gc373/blog.git public/
+              git submodule sync
+              git submodule update --init --recursive
               chmod +x deploy.sh && ./deploy.sh
+
 workflows:
   version: 2
   build_and_deploy:
