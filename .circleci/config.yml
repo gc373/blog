@@ -45,5 +45,4 @@ workflows:
           requires:
             - build 
           filters:
-            branches:
-              only: draft
+            branches: draft
