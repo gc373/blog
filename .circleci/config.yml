@@ -7,9 +7,9 @@ jobs:
     steps:
         - checkout
         - run:
-          command: |
-            git config --global user.name "CircleCI"
-            git config --global user.email "circleci@example.com"
+            command: |
+              git config --global user.name "CircleCI"
+              git config --global user.email "circleci@example.com"
 
   deploy:
     machine: true
