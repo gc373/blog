@@ -42,5 +42,7 @@ Markdownで書けるとかがメリット。無料。
 
 #### 流れ
 Markdownで記事を書く  
-→ Hugoという静的サイト生成ツールをつかってブログ化  
 → GitHubにアップロード  
+→ CircleCIにWebhookが届く  
+→ Hugoという静的サイト生成ツールをつかってブログ化  
+→ Github pagesでブログ化して表示される
