@@ -21,7 +21,8 @@ jobs:
             command: |
               git clone https://github.com/gc373/blog.git public
               sudo cp /usr/share/zoneinfo/Japan /etc/localtime
-              ./deploy
+              ls -la
+              chmod +x ./deploy && ./deploy
 workflows:
   version: 2
   build_and_deploy:
