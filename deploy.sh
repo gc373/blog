@@ -13,7 +13,7 @@ function gitRebuild(){
 
   # Commit changes.
   now=`date +"%Y/%m/%d %p %I:%M:%S"`
-  msg="rebuilding site ${now}"
+  msg=":tada: rebuilding site ${now} :tada:"
   printf "\033[0;31m[${msg}]\033[0;39m\n"
   if [ $# -eq 1 ]
     then msg="$1"
