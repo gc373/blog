@@ -24,7 +24,13 @@ function gitRebuild(){
 }
 
 # Build the project. 
+rm -rf public
+git submodule sync
+git submodule update --init --recursive
+git clone git@github.com:gc373/blog.git public
 cd public
+git config --global user.name "${GIT_USER_NAME}"
+git config --global user.email "${GIT_USER_EMAIL}"
 git reset origin/master
 cd ../
 hugo
