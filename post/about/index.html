@@ -275,12 +275,12 @@
 <ul>
 <li><a href="#これなに">これなに？</a></li>
 <li><a href="#誰">誰？</a></li>
-<li><a href="#このブログの仕組みは">このブログの仕組みは？</a></li>
-<li><a href="#普通のブログと違うの">普通のブログと違うの？</a>
+<li><a href="#このブログの仕組みは">このブログの仕組みは？</a>
 
 <ul>
 <li><a href="#流れ">流れ</a></li>
 </ul></li>
+<li><a href="#普通のブログと違うの">普通のブログと違うの？</a></li>
 </ul>
 
 <hr />
@@ -317,6 +317,14 @@
 
 <p>GitHubに記事を上げる → github-pagesという仕組みで表示される</p>
 
+<h4 id="流れ">流れ</h4>
+
+<p>Markdownで記事を書く<br />
+→ GitHubにアップロード<br />
+→ CircleCIにWebhookが届く<br />
+→ Hugoという静的サイト生成ツールをつかってブログ化<br />
+→ Github pagesでブログ化して表示される</p>
+
 <h2 id="普通のブログと違うの">普通のブログと違うの？</h2>
 
 <hr />
@@ -326,14 +334,6 @@ Markdownで書けるとかがメリット。無料。<br />
 一方で、デザインを決めないといけないし、<br />
 ファビコンとかTwitter Cardsとか全部自分で設定しないといけない。<br />
 独自ドメインも使えるけど今のとこ考えはいない。</p>
-
-<h4 id="流れ">流れ</h4>
-
-<p>Markdownで記事を書く<br />
-→ GitHubにアップロード<br />
-→ CircleCIにWebhookが届く<br />
-→ Hugoという静的サイト生成ツールをつかってブログ化<br />
-→ Github pagesでブログ化して表示される</p>
 
   <div style="text-align: center;">
     <a href="https://bitflyer.jp/Lightning?bf=pfntltml" target="_blank">
