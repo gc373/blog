@@ -3,6 +3,7 @@ title: "プライドが高いってそんなに悪いこと？"
 date: 2018-01-13T19:04:25+09:00
 draft: false
 tags: ["poem"]
+eyecatch: "img/kilroy.jpg"
 ---
 はい、くそみたいにプライドの高いみなみです。
 <!--more-->
