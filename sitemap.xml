@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://gc373.github.io/blog/post/too_proud_of_himself/</loc>
+    <lastmod>2018-01-13T19:39:37+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gc373.github.io/blog/post/slackin_japanization/</loc>
     <lastmod>2017-12-28T03:10:48+09:00</lastmod>
   </url>
@@ -57,8 +62,14 @@
   </url>
   
   <url>
+    <loc>https://gc373.github.io/blog/tags/poem/</loc>
+    <lastmod>2018-01-13T19:39:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://gc373.github.io/blog/post/</loc>
-    <lastmod>2017-12-28T03:10:48+09:00</lastmod>
+    <lastmod>2018-01-13T19:39:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -82,7 +93,7 @@
   
   <url>
     <loc>https://gc373.github.io/blog/</loc>
-    <lastmod>2017-12-28T03:10:48+09:00</lastmod>
+    <lastmod>2018-01-13T19:39:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
