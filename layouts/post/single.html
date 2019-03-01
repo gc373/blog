@@ -5,13 +5,13 @@
   <h2>{{ .Description }}</h2>
 </div>
 <div class="content">
-
+  {{ partial "google_adsense.html" . }}
   {{ partial "post_meta.html" . }}
   {{ partial "share.html" . }}
 
   {{ .Content }}
 
-  {{ partial "bitflyer.html" . }}
+  {{ partial "google_adsense.html" . }}
   {{ partial "prev_next_post.html" . }}
   {{ partial "disqus.html" . }}
 
