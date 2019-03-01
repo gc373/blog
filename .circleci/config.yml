@@ -12,7 +12,8 @@ jobs:
               git config --global user.email "${GIT_USER_EMAIL}"
 
   deploy:
-    machine: true
+    docker:
+      - image: circleci/golang:1.11
     working_directory: ~/blog
     environment:
       TZ: /usr/share/zoneinfo/Asia/Tokyo
