@@ -7,9 +7,11 @@
 <div class="content">
   {{ partial "post_meta.html" . }}
   {{ partial "share.html" . }}
+  {{ partial "google_ad_top.html" .  }}
 
   {{ .Content }}
-
+  
+  {{ partial "google_ad_bottom.html" .  }}
   {{ partial "prev_next_post.html" . }}
   {{ partial "disqus.html" . }}
 
