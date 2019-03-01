@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on from:gc373</title>
+    <title>Tags on </title>
     <link>https://gc373.github.io/blog/tags/</link>
-    <description>Recent content in Tags on from:gc373</description>
+    <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
     <lastBuildDate>Sat, 09 Dec 2017 03:24:14 +0900</lastBuildDate>
     
 	<atom:link href="https://gc373.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />

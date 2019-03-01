@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Idol on from:gc373</title>
+    <title>Idol on </title>
     <link>https://gc373.github.io/blog/tags/idol/</link>
-    <description>Recent content in Idol on from:gc373</description>
+    <description>Recent content in Idol on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
     <lastBuildDate>Sat, 23 Dec 2017 16:02:09 +0900</lastBuildDate>
     
 	<atom:link href="https://gc373.github.io/blog/tags/idol/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +17,7 @@
       
       <guid>https://gc373.github.io/blog/post/confuse_dots/</guid>
       <description>&lt;p&gt;はい、みなみです。書きます。&lt;br /&gt;
-なぜ面倒くさいのか。
-&lt;/p&gt;</description>
+なぜ面倒くさいのか。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,8 +27,7 @@
       
       <guid>https://gc373.github.io/blog/post/emop_analyze_paselichan/</guid>
       <description>&lt;p&gt;はい、エモクルスコップについて書きます。解説というか、メモ。&lt;br /&gt;
-12/20に行われた、「&lt;strong&gt;『Pit Put Circle』解剖SHOW&lt;/strong&gt;」に行ってきました。&lt;br /&gt;
-&lt;/p&gt;</description>
+12/20に行われた、「&lt;strong&gt;『Pit Put Circle』解剖SHOW&lt;/strong&gt;」に行ってきました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -40,8 +37,7 @@
       
       <guid>https://gc373.github.io/blog/post/music_with_idol/</guid>
       <description>&lt;p&gt;最近のアイドルについて話します。&lt;br /&gt;
-負けるなバンドマン、がんばれアイドル。
-&lt;/p&gt;</description>
+負けるなバンドマン、がんばれアイドル。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -52,8 +48,7 @@
       <guid>https://gc373.github.io/blog/post/dotstokyo_concepts/</guid>
       <description>&lt;p&gt;はい、みなみです。&lt;br /&gt;
 なにか書きます。&lt;br /&gt;
-なにせ #Tokyo_in_Words_and_Letters なので。&lt;br /&gt;
-&lt;/p&gt;</description>
+なにせ #Tokyo_in_Words_and_Letters なので。&lt;/p&gt;</description>
     </item>
     
   </channel>

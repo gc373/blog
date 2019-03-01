@@ -29,17 +29,23 @@
   
   <url>
     <loc>https://gc373.github.io/blog/post/dotstokyo_concepts/</loc>
-    <lastmod>2017-12-19T00:22:45+09:00</lastmod>
+    <lastmod>2018-01-08T16:47:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://gc373.github.io/blog/post/about/</loc>
-    <lastmod>2017-12-09T03:24:14+09:00</lastmod>
+    <lastmod>2018-01-13T18:55:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gc373.github.io/blog/</loc>
+    <lastmod>2018-01-13T19:53:10+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gc373.github.io/blog/tags/about/</loc>
-    <lastmod>2017-12-09T03:24:14+09:00</lastmod>
+    <lastmod>2018-01-13T18:55:03+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -87,13 +93,7 @@
   
   <url>
     <loc>https://gc373.github.io/blog/tags/</loc>
-    <lastmod>2017-12-09T03:24:14+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gc373.github.io/blog/</loc>
-    <lastmod>2018-01-13T19:53:10+09:00</lastmod>
+    <lastmod>2018-01-13T18:55:03+09:00</lastmod>
     <priority>0</priority>
   </url>
   
