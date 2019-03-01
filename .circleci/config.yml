@@ -19,7 +19,7 @@ jobs:
     steps:
         - run:
             name: install hugo
-            command: go get github.com/gohugoio/hugo
+            command: go version && go get -u github.com/gohugoio/hugo
         - checkout
         - run:
             command: |
