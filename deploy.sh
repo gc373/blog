@@ -1,5 +1,5 @@
-#deploy.shの中身
 #!/bin/bash
+#deploy.shの中身
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
@@ -9,7 +9,7 @@ function printDir(){
 function gitRebuild(){
   printDir
   # Add changes to git.
-  git add .
+  git add -A
 
   # Commit changes.
   now=`date +"%Y/%m/%d %H:%M:%S"`
@@ -20,11 +20,11 @@ function gitRebuild(){
   fi
   printf "\033[0;31m[:tada:${now}:tada:]\033[0;39m\n"
   git commit -m "$msg"
-  git push
+  git push origin master
 }
 
 # Build the project. 
-rm -rf public
+rm -rf public/
 git submodule sync
 git submodule update --init --recursive
 git clone git@github.com:gc373/blog.git public
@@ -36,5 +36,3 @@ cd ../
 hugo
 cd public
 gitRebuild
-# Come Back
-cd ..

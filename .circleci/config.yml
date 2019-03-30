@@ -3,32 +3,36 @@ jobs:
   build:
     machine: true
     environment:
-      TZ: /usr/share/zoneinfo/Asia/Tokyo
+    - TZ: /usr/share/zoneinfo/Asia/Tokyo
     steps:
-        - checkout
-        - run: git config --global user.name "${GIT_USER_NAME}"
-        - run: git config --global user.email "${GIT_USER_EMAIL}"
-
+    - checkout
+    - run:
+        command: git config --global user.name "${GIT_USER_NAME}"
+    - run:
+        command: git config --global user.email "${GIT_USER_EMAIL}"
   deploy:
     docker:
-      - image: circleci/golang:1.11
+    - image: monachus/hugo
     working_directory: ~/blog
     environment:
-      TZ: /usr/share/zoneinfo/Asia/Tokyo
+    - TZ: /usr/share/zoneinfo/Asia/Tokyo
     steps:
-        - run: go version && go get -u github.com/gohugoio/hugo
-        - checkout
-        - run: sudo cp /usr/share/zoneinfo/Japan /etc/localtime
-        - run: chmod +x deploy.sh && ./deploy.sh
-
+    - checkout
+    - run:
+        command: hugo version
+    - run:
+        command: cp /usr/share/zoneinfo/Japan /etc/localtime
+    - run:
+        command: chmod +x deploy.sh && ./deploy.sh
+        when: on_success
 workflows:
   version: 2
   build_and_deploy:
     jobs:
-      - build
-      - deploy:
-          requires:
-            - build 
-          filters:
-            branches:
-              only: draft
+    - build
+    - deploy:
+        filters:
+          branches:
+            only: draft
+        requires:
+        - build

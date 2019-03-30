@@ -3,7 +3,7 @@ title: "【Node.js】#RaspberryPi でサーボを使って超お手軽 #IoT"
 date: 2019-03-30T17:57:35+09:00
 draft: false
 toc: true
-eyecatch: "img/kilroy.jpg"
+eyecatch: "img/rpi_logo.png"
 tags: ["iot", "Programming"]
 description: ""
 ---
@@ -151,3 +151,5 @@ hubotを使ってSNSやSlackから操作したりすることで外出先から�
 まずは今回のようなお手軽おうちハックからはじめて、徐々に使い勝手を上げていくとよいでしょう
 
 それでは
+
+“Raspberry Pi is a trademark of the Raspberry Pi Foundation”
