@@ -24,7 +24,7 @@ jobs:
           command: go get -v github.com/gohugoio/hugo
       - run:
           name: fix localtime
-          command: cp /usr/share/zoneinfo/Japan /etc/localtime
+          command: sudo cp /usr/share/zoneinfo/Japan /etc/localtime
       - run: 
           name: deploy go
           command: chmod +x deploy.sh && ./deploy.sh
