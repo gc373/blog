@@ -14,6 +14,10 @@ languageCode = "ja"
 enableRobotsTXT = true
 hasCJKLanguage = true
 disqus = "from-gc373"
+pygmentsCodefences = true
+pygmentsUseClasses = true
+highlightjs = "monokai-sublime"
+
 
 [social]
 # Link your social networking accounts to the side menu
