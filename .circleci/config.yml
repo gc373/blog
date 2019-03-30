@@ -17,9 +17,10 @@ jobs:
     - TZ: /usr/share/zoneinfo/Asia/Tokyo
     steps:
       - checkout
+      - run: go version
       - run:
-        name: install hugo
-        command: go get -v github.com/gohugoio/hugo
+          name: install hugo
+          command: go get -v github.com/gohugoio/hugo
       - run: pwd
       - run:
           name: Print the Current Time
