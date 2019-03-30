@@ -17,14 +17,31 @@ jobs:
     environment:
     - TZ: /usr/share/zoneinfo/Asia/Tokyo
     steps:
-    - checkout
-    - run:
-        command: hugo version
-    - run:
-        command: cp /usr/share/zoneinfo/Japan /etc/localtime
-    - run:
-        command: chmod +x deploy.sh && ./deploy.sh
-        when: on_success
+      - checkout
+      - run: pwd
+      - run:
+          name: Print the Current Time
+          command: date
+      - run:
+          name: Hugo Version Check
+          command: hugo version
+      - run: rm -rf public
+      - run: git submodule sync
+      - run: git submodule update --init --recursive
+      - run:
+          name: Git Clone
+          command: git clone git@github.com:gc373/blog.git public
+      - run:
+          name: Hugo Build
+          command: hugo --minify
+      - run: cd public
+      - run: cd public && pwd
+      - run: echo ${GIT_USER_EMAIL}
+      - run: cd public && git config user.email "${GIT_USER_EMAIL}"
+      - run: cd public && git config user.name "${GIT_USER_NAME}"
+      - run: cd public && git add -A
+      - run: cd public && git commit -m "deploy from CI"
+      - run: cd public && git push origin master
 workflows:
   version: 2
   build_and_deploy:
