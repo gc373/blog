@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Programming on </title>
-    <link>https://gc373.github.io/blog/tags/programming/</link>
-    <description>Recent content in Programming on </description>
+    <title>iot on </title>
+    <link>https://gc373.github.io/blog/tags/iot/</link>
+    <description>Recent content in iot on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 30 Mar 2019 17:57:35 +0900</lastBuildDate>
     
-	<atom:link href="https://gc373.github.io/blog/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gc373.github.io/blog/tags/iot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <description>&lt;p&gt;こんにちは、こんにちは みなみです&lt;br /&gt;
 今回はラズパイでお手軽IoTをやっていきます&lt;br /&gt;
 つかうのはNode.jsとサーボです(日本語記事が少なかったので)&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>暇だったからslackinを日本語化した</title>
-      <link>https://gc373.github.io/blog/post/slackin_japanization/</link>
-      <pubDate>Thu, 28 Dec 2017 02:25:02 +0900</pubDate>
-      
-      <guid>https://gc373.github.io/blog/post/slackin_japanization/</guid>
-      <description>&lt;p&gt;はい、Slackの自動招待メールを受け取るslackinの話。&lt;/p&gt;</description>
     </item>
     
   </channel>

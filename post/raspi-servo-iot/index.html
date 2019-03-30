@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name="generator" content="Hugo 0.55.0-DEV" />
+
+  <title>【Node.js】#RaspberryPi でサーボを使って超お手軽 #IoT &middot; </title>
+  
+  
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="">
+<meta name="twitter:creator" content="">
+<meta name="twitter:title" content="【Node.js】#RaspberryPi でサーボを使って超お手軽 #IoT - ">
+<meta name="twitter:url" content="https://gc373.github.io/blog/post/raspi-servo-iot/">
+<meta name="twitter:image" content="https://gc373.github.io/blog/img/kilroy.jpg">
+<meta name="twitter:description" content="こんにちは、こんにちは みなみです
+今回はラズパイでお手軽IoTをやっていきます
+つかうのはNode.jsとサーボです(日本語記事が少なかったので)">
+<meta name="og:title" content="【Node.js】#RaspberryPi でサーボを使って超お手軽 #IoT" />
+<meta name="og:description" content="こんにちは、こんにちは みなみです
+今回はラズパイでお手軽IoTをやっていきます
+つかうのはNode.jsとサーボです(日本語記事が少なかったので)" />
+<meta name="og:image" content="https://gc373.github.io/blog/img/kilroy.jpg" />
+  
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://gc373.github.io/blog/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://gc373.github.io/blog/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://gc373.github.io/blog/css/blackburn.css">
+  <link rel="stylesheet" href="https://gc373.github.io/blog/css/syntax.css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://gc373.github.io/blog/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-6501468100224869",
+      enable_page_level_ads: true
+    });
+  </script>
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://gc373.github.io/blog/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://gc373.github.io/blog/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://gc373.github.io/blog/post/index.xml"><i class='fa fa-rss fa-fw'></i>RSS</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://gc373.github.io/blog/post/about/"><i class='fa fa-user-circle-o fa-fw'></i>about</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/gc373" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://instagram.com/gc373i" target="_blank"><i class="fa fa-instagram fa-fw"></i>Instagram</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/gc373" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small></small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>【Node.js】#RaspberryPi でサーボを使って超お手軽 #IoT</h1>
+  <h2></h2>
+</div>
+<div class="content">
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019/03/30 17:57</time>
+    <i></i>
+    <i class="fa fa-refresh fa-fw"></i>
+    <time>2019/03/30 19:47</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://gc373.github.io/blog/tags/iot">iot</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://gc373.github.io/blog/tags/programming">Programming</a>
+    
+  </div>
+  
+  
+
+</div>
+  
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">
+    <font size="5px" color="#00acec">
+        <span class="icon-twitter"></span>
+    </font>
+</a>&emsp;
+<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja"
+    title="このエントリーをはてなブックマークに追加">
+    <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20"
+        style="border: none;" />
+</a>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-6501468100224869"
+    data-ad-slot="6543657975"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+  <p>こんにちは、こんにちは みなみです<br />
+今回はラズパイでお手軽IoTをやっていきます<br />
+つかうのはNode.jsとサーボです(日本語記事が少なかったので)</p>
+
+<!-- TOC -->
+
+<h1 id="tl-dr">TL;DR</h1>
+
+<hr />
+
+<ul>
+<li><a href="#0.-必要なもの">0. 必要なもの</a></li>
+<li><a href="#1-raspberrypiの設定">1. RaspberryPiの設定</a></li>
+<li><a href="#2-サーボの準備">2. サーボの準備</a></li>
+<li><a href="#3-nodejsの設定">3. Node.jsの設定</a></li>
+<li><a href="#4-動作確認">4. 動作確認</a></li>
+<li><a href="#5-サーバで待受して遠隔操作してみる">5. サーバで待受して遠隔操作してみる</a></li>
+</ul>
+
+<hr />
+
+<!-- /TOC -->
+
+<h1 id="0-必要なもの">0. 必要なもの</h1>
+
+<hr />
+
+<ul>
+<li>Raspberry Pi(今回の記事ではRaspberry Pi 3を使用しましたが、WやWHでも動作可能です)</li>
+<li>サーボ <a href="http://akizukidenshi.com/catalog/g/gM-08761/">SG90</a></li>
+<li>ジャンプワイヤー(ラズパイとの接続に必要です)</li>
+<li>ラズパイの基本物
+
+<ul>
+<li>SDカード</li>
+<li>microUSBの充電ケーブル</li>
+<li><em>必要であればHDMIケーブルやUSBキーボードなど</em></li>
+</ul></li>
+<li>その他
+
+<ul>
+<li><em>壁やリモコンにくっつけるための両面テープ</em><br />
+(僕は100均の強力アクリルテープでくっつけました)</li>
+</ul></li>
+</ul>
+
+<h1 id="1-raspberrypiの設定">1. RaspberryPiの設定</h1>
+
+<hr />
+
+<p>まず、初期セットアップを済ませてSSHで接続できるようにします<br />
+このへんを参考にしてみてください<br />
+<a href="https://qiita.com/HeRo/items/c1c30d7267faeb304538">Raspberry Pi 初期設定</a><br />
+また、SDカードに書き込む際にWi-Fiの設定をしておくと、画面無しでもSSHまで一気にいけます<br />
+<a href="https://qiita.com/mascii/items/0d1a280ac58ed8f6f999">Raspberry Piの無線LANをmicroSDで設定する</a></p>
+
+<p>僕の場合はVSCodeの拡張機能を使い、遠隔エディタとして作業しました<br />
+VSCodeでSSH FSという拡張機能をつかうとSSH先をVSCodeで表示しながら作業できるため、非常に便利です<br />
+<a href="https://qiita.com/informationsea/items/5c9f05c81a41fb885460">Visual Studio CodeでSSHごしにファイルを編集する</a></p>
+
+<h1 id="2-サーボの準備">2. サーボの準備</h1>
+
+<hr />
+
+<p>Raspberry Piと<br />
+- GND<br />
+- 5V<br />
+- <strong>18番</strong><br />
+をジャンプワイヤーでつなぎます<br />
+<img src="https://gc373.github.io/blog/img/breadboard_raspi_servo.png" width="100%"></p>
+
+<h1 id="3-node-jsの設定">3. Node.jsの設定</h1>
+
+<hr />
+
+<p>Raspberry PiにはNode.jsが入ってると思いますが念の為</p>
+
+<pre><code class="language-bash">$ node --version
+v11.10.0
+</code></pre>
+
+<p>これでOKです<br />
+npmをつかって必要なモジュールをインストールします<br />
+今回つかうのはこちらです<br />
+<a href="https://www.npmjs.com/package/pigpio">pigpio</a><br />
+これをnpmでインストールします</p>
+
+<pre><code class="language-bash">$ npm init # 適当なプロジェクト名をつけておきます
+$ npm i pigpio
+</code></pre>
+
+<h1 id="4-動作確認">4. 動作確認</h1>
+
+<hr />
+
+<p>簡単なサンプルを用意したので動作確認をしてみます</p>
+
+<pre><code class="language-js">const pigpio = require(&quot;pigpio&quot;);
+const Gpio = pigpio.Gpio;
+const servoPinNo = 18; // 今回はGPIOの18番をつかいます
+const motor = new Gpio(servoPinNo, { mode: Gpio.OUTPUT });
+
+// この関数はキープしておくと便利です
+function sleep(sec) {
+  return new Promise(resolve =&gt; setTimeout(resolve, sec * 1000));
+}
+
+// const PALSMAX = 2500;
+// const PALSMIN = 500;
+let start;
+
+async function switchOnOff() {
+  await motor.servoWrite(1600);
+  await sleep(0.3);
+  await motor.servoWrite(1950);
+  await sleep(0.1);
+  await motor.servoWrite(1600);
+  console.log(`switch pushed!! ${new Date().toLocaleString()}`);
+}
+(async () =&gt; {
+	await switchOnOff();
+})()
+</code></pre>
+
+<p>これを <code>servo.js</code> という名前をつけて保存します</p>
+
+<pre><code class="language-bash">$ sudo node servo.js # piユーザーの場合はsudo必須です
+</code></pre>
+
+<p>これでサーボが動けば大丈夫です<br />
+(クイックイッと動くはずです)</p>
+
+<h1 id="5-サーバで待受して遠隔操作してみる">5. サーバで待受して遠隔操作してみる</h1>
+
+<hr />
+
+<p>今回は壁に貼り付けて電気スイッチを押してもらうことにしました<br />
+htmlファイルをおいて、expressでサーバを立てます<br />
+こういった階層になります</p>
+
+<pre><code class="language-bash">|--gpio.js
+|--main.js
+|--public
+|  |--index.html
+|--router.js
+|--wakeup.json
+</code></pre>
+
+<p><strong><a href="https://github.com/gc373/simply-switch-on-off">リポジトリはこちら</a></strong></p>
+
+<p>もう少し簡単にまとめることもできますが、今回はルーティングの動作確認も含めてファイルを分割しました</p>
+
+<pre><code class="language-bash">$ node main
+</code></pre>
+
+<p>でサーバ起動し、Raspberry PiのIPアドレスをブラウザで開くと画面が表示されます<br />
+もちろん、スマホからでも動作します<br />
+家のネットワーク内なら遠隔で電気を点けることができるようになりました<br />
+<em>wakeup.jsonはpm2での永続化のためにつくりましたので、実際の起動は <code>pm2 start ./wakeup.json</code> となります</em><br />
+実際の動作はこんな感じです<br />
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/iuFKq4MNQl8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+
+<h1 id="6-後記">6. 後記</h1>
+
+<hr />
+
+<p>このサーボではトルクが弱いので鍵の開け締めは難しいですが、サーボを交換すればスマートロックにも使えます<br />
+もちろんその際は認証まわりをきちんと設定してください<br />
+<em>グローバルIPでなければそもそもネットワークに接続した端末でしか操作できないですが</em></p>
+
+<p>たとえばグローバルIPがない場合でも、EC2インスタンスをつかってWebSocketサーバを立ててローカルから接続させたり、<br />
+hubotを使ってSNSやSlackから操作したりすることで外出先からの操作も考えられます<br />
+もちろんGoogle HomeやAmazon Echoと連携することもできます<br />
+まずは今回のようなお手軽おうちハックからはじめて、徐々に使い勝手を上げていくとよいでしょう</p>
+
+<p>それでは</p>
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6501468100224869"
+     data-ad-slot="3605545580"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://gc373.github.io/blog/post/too_proud_of_himself/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://gc373.github.io/blog/post/too_proud_of_himself/">プライドが高いってそんなに悪いこと？</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'from-gc373';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://gc373.github.io/blog/js/ui.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-110959652-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+</body>
+</html>
+
