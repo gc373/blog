@@ -6,10 +6,8 @@ jobs:
       TZ: /usr/share/zoneinfo/Asia/Tokyo
     steps:
         - checkout
-        - run:
-            command: |
-              git config --global user.name "${GIT_USER_NAME}"
-              git config --global user.email "${GIT_USER_EMAIL}"
+        - run: git config --global user.name "${GIT_USER_NAME}"
+        - run: git config --global user.email "${GIT_USER_EMAIL}"
 
   deploy:
     docker:
@@ -18,14 +16,10 @@ jobs:
     environment:
       TZ: /usr/share/zoneinfo/Asia/Tokyo
     steps:
-        - run:
-            name: install hugo
-            command: go version && go get -u github.com/gohugoio/hugo
+        - run: go version && go get -u github.com/gohugoio/hugo
         - checkout
-        - run:
-            command: |
-              sudo cp /usr/share/zoneinfo/Japan /etc/localtime
-              chmod +x deploy.sh && ./deploy.sh
+        - run: sudo cp /usr/share/zoneinfo/Japan /etc/localtime
+        - run: chmod +x deploy.sh && ./deploy.sh
 
 workflows:
   version: 2
