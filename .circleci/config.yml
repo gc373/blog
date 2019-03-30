@@ -30,15 +30,15 @@ jobs:
       - run: git submodule update --init --recursive
       - run:
           name: Git Clone
-          command: git clone https://github.com/gc373/blog.git public
+          command: git clone --depth 1 https://github.com/gc373/blog.git public
       - run:
           name: Hugo Build
           command: hugo --minify
       - run: cd public
       - run: cd public && pwd
       - run: echo ${GIT_USER_EMAIL}
-      - run: cd public && git config user.email "${GIT_USER_EMAIL}"
-      - run: cd public && git config user.name "${GIT_USER_NAME}"
+      - run: cd public && git config --global user.email "${GIT_USER_EMAIL}"
+      - run: cd public && git config --global user.name "${GIT_USER_NAME}"
       - run: cd public && git add -A
       - run: cd public && git commit -m "rebuilding site $(date +'%Y/%m/%d %H:%M:%S') :tada:"
       - run: cd public && git push origin master
