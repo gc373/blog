@@ -11,7 +11,8 @@ jobs:
     - run:
         command: git config --global user.email "${GIT_USER_EMAIL}"
   deploy:
-    machine: true
+    docker:
+      - image: circleci/golang:1.11
     working_directory: ~/blog
     environment:
     - TZ: /usr/share/zoneinfo/Asia/Tokyo
@@ -21,33 +22,12 @@ jobs:
       - run:
           name: install hugo
           command: go get -v github.com/gohugoio/hugo
-      - run: pwd
       - run:
-          name: Print the Current Time
-          command: date
-      - run:
-          name: Hugo Version Check
-          command: hugo version
-      - run: rm -rf public
-      - run: git submodule sync
-      - run: git submodule update --init --recursive
-      - run:
-          name: Git Clone
-          command: git clone git@github.com:gc373/blog.git public
-      - run:
-          name: Hugo Build
-          command: hugo --minify
-      - run:
-          name: github ssh test
-          command: ssh -T git@github.com
-      - run: cd public
-      - run: cd public && pwd
-      - run: echo ${GIT_USER_EMAIL}
-      - run: cd public && git config --global user.email "${GIT_USER_EMAIL}"
-      - run: cd public && git config --global user.name "${GIT_USER_NAME}"
-      - run: cd public && git add -A
-      - run: cd public && git commit -m "rebuilding site $(date +'%Y/%m/%d %H:%M:%S') :tada:"
-      - run: cd public && git push origin master
+          name: fix localtime
+          command: cp /usr/share/zoneinfo/Japan /etc/localtime
+      - run: 
+          name: deploy go
+          command: chmod +x deploy.sh && ./deploy.sh
 workflows:
   version: 2
   build_and_deploy:
